@@ -9,22 +9,22 @@ const ToDoList = () => {
     {id: 4, text: 'Make good dishes', complete: true}
   ])
 
-  const ToDoItems = todosData.map(todoData => <ToDoItem complete={todoData.complete} text={todoData.text} checkFunction={checkFunc}/>)
-
   const checkFunc = (id) => {
-    const dataTmp = [...todosData]
-    const updatedTodos = dataTmp.map(todo => {
+    const todosTmp = [...todosData]
+    const updatedTodos = todosTmp.map(todo => {
       if (todo.id === id) {
-        setToDosData({ ...dataTmp, complete: !todo.complete })
+        todo.complete = !todo.complete
       }
       return todo
-    }
-    )
+    })
+    setToDosData(todosTmp)
   }
 
   return (
     <div className='listTodo'>
-      { ToDoItems }
+      { todosData.map((todoData, i) =>
+        <ToDoItem key={i} id={todoData.id} complete={todoData.complete} text={todoData.text} checkFunction={checkFunc}/>)
+      }
     </div>
   )
 }
