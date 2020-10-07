@@ -19,3 +19,7 @@
 .inItem {
   margin-left: 1em;
 }
+
+input:checked + p{
+  text-decoration: line-through;
+}
