@@ -26,9 +26,11 @@ const ToDoList = () => {
   }
 
   const addTodo = (e) => {
+    e.preventDefault()
     const todosTmp = [...todosData]
     todosTmp.push(todo)
     setToDosData(todosTmp)
+    setTodo({ id: '', text: '', complete: false})
   }
 
   return (
@@ -36,10 +38,10 @@ const ToDoList = () => {
       { todosData.map((todoData, i) =>
         <ToDoItem key={i} id={todoData.id} complete={todoData.complete} text={todoData.text} checkFunction={checkFunc}/>)
       }
-      <div>
+      <form onSubmit={e => addTodo(e)}>
         <input name='add' value={todo.text} onChange={e => setTodo({ ...todo, text: e.target.value, id: todosData.length +1 })}/>
-        <button onClick={e => addTodo(e)}>add todo</button>
-    </div>
+        <button>add todo</button>
+    </form>
     </div>
   )
 }
