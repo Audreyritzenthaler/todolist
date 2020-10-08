@@ -9,8 +9,7 @@
   padding: 0.8em;
   margin: 1em auto;
   border-bottom: 1px solid rgb(129, 129, 129);
-  width: 10%;
-  justify-content: flex-start;
+  width: 80%;
   align-items: center;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 22px;
@@ -22,4 +21,10 @@
 
 .tadam {
   text-decoration: line-through;
+  color: rgb(170, 170, 170);
+}
+
+.removeBtn {
+  border: none;
+  margin-left: auto;
 }

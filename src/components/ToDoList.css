@@ -2,3 +2,25 @@
   margin: 0;
   padding: 0;
 }
+
+.additemInput {
+  border: none;
+  height: 30px;
+  background-color: rgb(218, 218, 218);
+}
+
+.addBtn {
+  border: none;
+  margin: 1em;
+}
+
+.addBtnIcone {
+  font-size: 30px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
