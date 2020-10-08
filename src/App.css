@@ -1,3 +1,27 @@
 .App {
   text-align: center;
+  background-color: rgba(230, 230, 230, 0.527);
+  padding: 3em;
+  width: 30%;
+  margin: 2em auto;
+  box-shadow: 5px 5px 15px rgb(133, 133, 133);
 }
+
+.title {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 100;
+  font-size: 4em;
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 1200px) {
+  .App {
+    width: 60%;
+  }
+}
+
+/* @media screen and (max-width: 640px) {
+  .App {
+    width: 95%;
+  }
+} */
