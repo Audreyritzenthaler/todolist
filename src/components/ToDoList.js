@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ToDoItem from './ToDoItem'
+import './ToDoList.css'
 
 const ToDoList = () => {
   const [todo, setTodo] = useState({
@@ -33,14 +34,23 @@ const ToDoList = () => {
     setTodo({ id: '', text: '', complete: false})
   }
 
+  const removeTodo = (id) => {
+    const todosTmp = [...todosData]
+    const index = todosTmp.findIndex((el) => el.id === id)
+    todosTmp.splice(index, 1)
+    setToDosData(todosTmp)
+  }
+
   return (
     <div className='listTodo'>
       { todosData.map((todoData, i) =>
-        <ToDoItem key={i} id={todoData.id} complete={todoData.complete} text={todoData.text} checkFunction={checkFunc}/>)
-      }
-      <form onSubmit={e => addTodo(e)}>
-        <input name='add' value={todo.text} onChange={e => setTodo({ ...todo, text: e.target.value, id: todosData.length +1 })}/>
-        <button>add todo</button>
+        <>
+          <ToDoItem key={i} id={todoData.id} complete={todoData.complete} text={todoData.text} checkFunction={checkFunc} removeTodo={removeTodo}/>
+        </>
+      )}
+      <form className='form' onSubmit={e => addTodo(e)}>
+        <input className='additemInput' name='add' value={todo.text} placeholder='Add an item !' onChange={e => setTodo({ ...todo, text: e.target.value, id: todosData.length +1 })}/>
+        <button className='addBtn'><i class="fas fa-plus-circle addBtnIcone"></i></button>
     </form>
     </div>
   )
