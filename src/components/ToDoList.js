@@ -45,12 +45,12 @@ const ToDoList = () => {
     <div className='listTodo'>
       { todosData.map((todoData, i) =>
         <>
-          <ToDoItem key={i} id={todoData.id} complete={todoData.complete} text={todoData.text} checkFunction={checkFunc} removeTodo={removeTodo}/>
+          <ToDoItem key={i} id={todoData.id} complete={todoData.complete} text={todoData.text} checkFunction={checkFunc} removeTodo={removeTodo} />
         </>
       )}
       <form className='form' onSubmit={e => addTodo(e)}>
         <input className='additemInput' name='add' value={todo.text} placeholder='Add an item !' onChange={e => setTodo({ ...todo, text: e.target.value, id: todosData.length +1 })}/>
-        <button className='addBtn'><i class="fas fa-plus-circle addBtnIcone"></i></button>
+        <button className='addBtn' disabled={!todo.text}><i class="fas fa-plus-circle addBtnIcone"></i></button>
     </form>
     </div>
   )
