@@ -1,7 +1,7 @@
 import React from 'react'
 import './ToDoItem.css'
 
-const ToDoItem = ({ text, complete, checkFunction, id }) => {
+const ToDoItem = ({ text, complete, checkFunction, id, removeTodo }) => {
 
   return (
     <div className='item'>
@@ -14,6 +14,7 @@ const ToDoItem = ({ text, complete, checkFunction, id }) => {
         onChange={e => checkFunction(id)} />
       {text}
       </label>
+        <button id={id} className='removeBtn' onClick={e => removeTodo(id)}><i class="fas fa-trash-alt"></i></button>
     </div>
   )
 }
