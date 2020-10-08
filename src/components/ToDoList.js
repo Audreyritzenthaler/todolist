@@ -11,7 +11,7 @@ const ToDoList = () => {
 
   const checkFunc = (id) => {
     const todosTmp = [...todosData]
-    const updatedTodos = todosTmp.map(todo => {
+    todosTmp.map(todo => {
       if (todo.id === id) {
         todo.complete = !todo.complete
       }

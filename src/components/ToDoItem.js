@@ -5,7 +5,7 @@ const ToDoItem = ({ text, complete, checkFunction, id }) => {
 
   return (
     <div className='item'>
-      <label className='inItem'>
+      <label className={complete ? 'tadam' : null}>
       <input
         id={id}
         className='checkBox'
